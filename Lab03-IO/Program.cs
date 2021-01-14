@@ -7,12 +7,27 @@ namespace Lab03_IO
     {
         public static void Main(string[] args)
         {
-            //Console.WriteLine(ProductOfThree(getNums()));
-            // medianNumber();
-            //ReadFromFile();
-            //WriteToFile();
-            int[] testArr = new int[] { 2, 20, 30, 31, 33, 12, 13};
+            Console.WriteLine("Challenge 1:");
+            Console.WriteLine(ProductOfThree(getNums()));
+
+            Console.WriteLine("\nChallenge 2:");
+            medianNumber();
+
+            Console.WriteLine("\nChallenge 3:");
+            PrintPattern();
+
+            Console.WriteLine($"\nChallenge 4 passing in [20, 20, 30, 31, 13, 12, 13] should return 20");
+            int[] testArr = new int[] { 20, 20, 30, 31, 13, 12, 13 };
             Console.WriteLine(MostDuplicates(testArr));
+
+            Console.WriteLine($"\nChallenge 5 passing in [20, 20, 30, 31, 13, 12, 13] should return 31");
+            Console.WriteLine(ChallengeFive(testArr));
+
+            Console.WriteLine("\nChallenge 7 writing to words file");
+            WriteToFile();
+
+            Console.WriteLine("\nChallenge 6: reading from words file");
+            ReadFromFile();        
         }
 
         public static string getNums()
@@ -142,9 +157,23 @@ namespace Lab03_IO
                     returnValue = arr[j];
                 }
             }
-            if (maxCount == 1) return arr[0];
             return returnValue;
         }
+
+        //=============== Challenge 5
+        public static int ChallengeFive(int[] numArray)
+        {
+            // Worked With JP
+
+            int highestValue = numArray[0];
+
+            for (int i = 1; i < numArray.Length; i++)
+            {
+                if (numArray[i] > highestValue) highestValue = numArray[i];
+            }
+            return highestValue;
+        }
+
 
         //=============== Challenge 6
         public static void WriteToFile()
