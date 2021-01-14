@@ -6,6 +6,7 @@ namespace ProductOfThreeTest
 {
     public class UnitTest1
     {
+        // Product of three test
         [Fact]
         public void HappyPath()
         {
