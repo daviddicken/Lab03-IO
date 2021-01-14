@@ -9,7 +9,12 @@ namespace ProductOfThreeTest
         [Fact]
         public void HappyPath()
         {
-            Assert.Equal(24, progr)
+            Assert.Equal(24, Program.ProductOfThree("1 12 2"));
+        }
+
+        public void tooMuch()
+        {
+            Assert.Equal(24, Program.ProductOfThree("1 12 2 4"));
         }
     }
 }
